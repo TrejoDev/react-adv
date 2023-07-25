@@ -24,7 +24,7 @@ export const ProductButtons = ( { className = '', style }: Props ) => {
             <div className={ styles.countLabel }>{ counter }</div>
 
             <button
-                onClick={ () => increaseBy( 1 ) } 
+                onClick={ () => increaseBy( +1 ) } 
                 className={ styles.buttonAdd }> + </button>
         </div>
     )

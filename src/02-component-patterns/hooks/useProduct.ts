@@ -12,16 +12,10 @@ export const useProduct = ( { onChange, product, value = 0 }: useProductArgs ) =
 
     const [counter, setCounter] = useState<number>( value );
 
-    const isControlled = useRef( !!onChange )
 
     const increaseBy = ( value: number ): void => {
 
-        if( isControlled.current ){
-          return onChange!({ count: value, product });   //* ! = como usuario le digo a TS q: onChange en esta linea nunca va a ser undefined.
-        }
-
         const newValue = Math.max( counter + value, 0 )
-
         setCounter( newValue );
 
         onChange && onChange({ count: newValue, product  }); 
